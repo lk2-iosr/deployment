@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  AWS_ACCESS_KEY: x
+  AWS_QUEUE_NAME: x
+  AWS_REGION: us-west-2
+  AWS_SECRET_KEY: x
+  DESTINATION_MAIL: x
+  POST_FILTER_KEYWORD: world
+  SPRING_MAIL_PASSWORD: x
+  SPRING_MAIL_USERNAME: x
+kind: ConfigMap
+metadata:
+  name: publisher-publisher-env

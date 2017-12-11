@@ -13,7 +13,48 @@ spec:
         app: publisher
     spec:
       containers:
-      - image: iosr.facebookapp/publisher:v1
+      - env:
+        - name: AWS_ACCESS_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_ACCESS_KEY
+              name: publisher-publisher-env
+        - name: AWS_QUEUE_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_QUEUE_NAME
+              name: publisher-publisher-env
+        - name: AWS_REGION
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_REGION
+              name: publisher-publisher-env
+        - name: AWS_SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_SECRET_KEY
+              name: publisher-publisher-env
+        - name: DESTINATION_MAIL
+          valueFrom:
+            configMapKeyRef:
+              key: DESTINATION_MAIL
+              name: publisher-publisher-env
+        - name: POST_FILTER_KEYWORD
+          valueFrom:
+            configMapKeyRef:
+              key: POST_FILTER_KEYWORD
+              name: publisher-publisher-env
+        - name: SPRING_MAIL_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: SPRING_MAIL_PASSWORD
+              name: publisher-publisher-env
+        - name: SPRING_MAIL_USERNAME
+          valueFrom:
+            configMapKeyRef:
+              key: SPRING_MAIL_USERNAME
+              name: publisher-publisher-env
+        image: iosr.facebookapp/publisher
         name: publisher
         resources: {}
       restartPolicy: Always

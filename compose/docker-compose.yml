@@ -12,5 +12,7 @@ services:
       - "5000:5000"
   publisher:
     image: iosr.facebookapp/publisher
+    env_file:
+      - publisher.env
     depends_on:
       - stats  

@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  AWS_ACCESS_KEY: x
+  AWS_SECRET_KEY: x
+  FACEBOOK_OAUTH_KEY: a
+  FACEBOOK_URI: https://graph.facebook.com/v2.10/
+  FETCHED_POSTS_TOPIC: x
+  PAGES: 1:p_1,2:p_2
+kind: ConfigMap
+metadata:
+  name: fetcher-fetcher-env

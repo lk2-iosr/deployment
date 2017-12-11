@@ -1,0 +1,53 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: fetcher
+  name: fetcher
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: fetcher
+    spec:
+      containers:
+      - env:
+        - name: AWS_ACCESS_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_ACCESS_KEY
+              name: fetcher-fetcher-env
+        - name: AWS_SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_SECRET_KEY
+              name: fetcher-fetcher-env
+        - name: FACEBOOK_OAUTH_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: FACEBOOK_OAUTH_KEY
+              name: fetcher-fetcher-env
+        - name: FACEBOOK_URI
+          valueFrom:
+            configMapKeyRef:
+              key: FACEBOOK_URI
+              name: fetcher-fetcher-env
+        - name: FETCHED_POSTS_TOPIC
+          valueFrom:
+            configMapKeyRef:
+              key: FETCHED_POSTS_TOPIC
+              name: fetcher-fetcher-env
+        - name: PAGES
+          valueFrom:
+            configMapKeyRef:
+              key: PAGES
+              name: fetcher-fetcher-env
+        image: iosr.facebookapp/fetcher:v1
+        name: fetcher
+        ports:
+        - containerPort: 5000
+        resources: {}
+      restartPolicy: Always
+status: {}

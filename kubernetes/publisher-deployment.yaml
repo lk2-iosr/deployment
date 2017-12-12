@@ -44,6 +44,11 @@ spec:
             configMapKeyRef:
               key: POST_FILTER_KEYWORD
               name: publisher-publisher-env
+        - name: PUBLISH_STATS_INTERVAL_MINUTES
+          valueFrom:
+            configMapKeyRef:
+              key: PUBLISH_STATS_INTERVAL_MINUTES
+              name: publisher-publisher-env
         - name: SPRING_MAIL_PASSWORD
           valueFrom:
             configMapKeyRef:

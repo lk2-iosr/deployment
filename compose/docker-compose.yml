@@ -1,17 +1,17 @@
 version: '3'
 services:
   stats:
-    image: iosr.facebookapp/stats
+    image: lk2iosr/stats:v1
     ports:
       - "8080:8080"
   fetcher:
-    image: iosr.facebookapp/fetcher
+    image: lk2iosr/fetcher:v1
     env_file:
       - fetcher.env
     ports:
       - "5000:5000"
   publisher:
-    image: iosr.facebookapp/publisher
+    image: lk2iosr/publisher:v1
     env_file:
       - publisher.env
     depends_on:

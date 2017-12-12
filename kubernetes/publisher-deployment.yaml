@@ -59,7 +59,7 @@ spec:
             configMapKeyRef:
               key: SPRING_MAIL_USERNAME
               name: publisher-publisher-env
-        image: iosr.facebookapp/publisher
+        image: lk2iosr/publisher:v1
         name: publisher
         resources: {}
       restartPolicy: Always

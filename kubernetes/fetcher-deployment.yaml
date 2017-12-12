@@ -44,7 +44,7 @@ spec:
             configMapKeyRef:
               key: PAGES
               name: fetcher-fetcher-env
-        image: iosr.facebookapp/fetcher:v1
+        image: lk2iosr/fetcher:v1
         name: fetcher
         ports:
         - containerPort: 5000

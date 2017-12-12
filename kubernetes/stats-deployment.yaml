@@ -13,7 +13,7 @@ spec:
         app: stats
     spec:
       containers:
-      - image: iosr.facebookapp/stats:v1
+      - image: lk2iosr/stats:v1
         name: stats
         ports:
         - containerPort: 8080

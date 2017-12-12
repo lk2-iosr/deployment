@@ -26,18 +26,18 @@ This will start cluster composed of one instance of each service
  * Installed kubectl
  * Installed Minikube
 
-##Instructions
- 1. Go to kubernetes directory
- ```cd kubernetes```
- 2. Fill configs fetcher-fetcher-env-configmap.yaml, publisher-publisher-env-configmap.yaml as described at [fetcher](https://github.com/lk2-iosr/fetcher) and [publisher](https://github.com/lk2-iosr/publisher) respectively.
- 3. Start Minikube
- ```minikube start```
- 4. Go to parent directory
- ```cd ..```
- 5. Execute applyConfig.sh script
- ```bash applyConfig.sh```
- 6. Monitor whether deployment was successful with
- ```watch kubectl get all```
+### Instructions
+1. Go to kubernetes directory
+```cd kubernetes```
+2. Fill configs fetcher-fetcher-env-configmap.yaml, publisher-publisher-env-configmap.yaml as described at [fetcher](https://github.com/lk2-iosr/fetcher) and [publisher](https://github.com/lk2-iosr/publisher) respectively.
+3. Start Minikube
+```minikube start```
+4. Go to parent directory
+```cd ..```
+5. Execute applyConfig.sh script
+```bash applyConfig.sh```
+6. Monitor whether deployment was successful with
+```watch kubectl get all```
 
 
 ## Running cluster of services on AWS
@@ -46,13 +46,14 @@ This will start cluster composed of one instance of each service
  * Installed kubectl
  * configured AWS cluster with kops
 
- 1. Go to kubernetes directory
- ```cd kubernetes```
- 2. Fill configs fetcher-fetcher-env-configmap.yaml, publisher-publisher-env-configmap.yaml as described at [fetcher](https://github.com/lk2-iosr/fetcher) and [publisher](https://github.com/lk2-iosr/publisher) respectively.
- 3. Go to parent directory
- ```cd ..```
- 4. Execute applyConfig.sh script
- ```bash applyConfig.sh```
- 5. Monitor whether deployment was successful with
- ```watch kubectl get all```
+### Instructions
+1. Go to kubernetes directory
+```cd kubernetes```
+2. Fill configs fetcher-fetcher-env-configmap.yaml, publisher-publisher-env-configmap.yaml as described at [fetcher](https://github.com/lk2-iosr/fetcher) and [publisher](https://github.com/lk2-iosr/publisher) respectively.
+3. Go to parent directory
+```cd ..```
+4. Execute applyConfig.sh script
+```bash applyConfig.sh```
+5. Monitor whether deployment was successful with
+```watch kubectl get all```
 

@@ -26,7 +26,7 @@ This will start cluster composed of one instance of each service
  * Installed kubectl
  * Installed Minikube
 
- ##Instructions
+##Instructions
  1. Go to kubernetes directory
  ```cd kubernetes```
  2. Fill configs fetcher-fetcher-env-configmap.yaml, publisher-publisher-env-configmap.yaml as described at [fetcher](https://github.com/lk2-iosr/fetcher) and [publisher](https://github.com/lk2-iosr/publisher) respectively.

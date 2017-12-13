@@ -59,7 +59,7 @@ spec:
             configMapKeyRef:
               key: SPRING_MAIL_USERNAME
               name: publisher-publisher-env
-        image: lk2iosr/publisher:v1
+        image: lk2iosr/publisher:v2
         name: publisher
         resources: {}
       restartPolicy: Always

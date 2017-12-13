@@ -1,0 +1,52 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kube-sqs-autoscaler-stats
+  labels:
+    app: kube-sqs-autoscaler-stats
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kube-sqs-autoscaler-stats
+  template:
+    metadata:
+      labels:
+        app: kube-sqs-autoscaler-stats
+    spec:
+      containers:
+      - name: kube-sqs-autoscaler
+        image: wattpad/kube-sqs-autoscaler:v1.2.1
+        command:
+          - /kube-sqs-autoscaler
+          - --sqs-queue-url=https://sqs.eu-west-1.amazonaws.com/633326033980/fetched-posts-stats
+          - --kubernetes-deployment=stats # required
+          - --kubernetes-namespace=$(POD_NAMESPACE) # optional
+          - --aws-region=eu-west-1  #required
+          - --poll-period=30s # optional
+          - --scale-down-cool-down=30s # optional
+          - --scale-up-cool-down=3m # optional
+          - --scale-up-messages=100 # optional
+          - --scale-down-messages=10 # optional
+          - --max-pods=5 # optional
+          - --min-pods=1 # optional
+        env:
+          - name: POD_NAMESPACE
+            valueFrom:
+              fieldRef:
+                fieldPath: metadata.namespace
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "200Mi"
+            cpu: "100m"
+        volumeMounts:
+          - name: ssl-certs
+            mountPath: /etc/ssl/certs/ca-certificates.crt
+            readOnly: true
+      volumes:
+        - name: ssl-certs
+          hostPath:
+            path: "/etc/ssl/certs/ca-certificates.crt"

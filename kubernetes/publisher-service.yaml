@@ -8,7 +8,7 @@ spec:
   clusterIP: None
   ports:
   - name: headless
-    port: 55555
+    port: 5555
     targetPort: 0
   selector:
     app: publisher

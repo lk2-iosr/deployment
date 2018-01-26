@@ -25,8 +25,8 @@ spec:
           - --aws-region=eu-west-1  #required
           - --poll-period=30s # optional
           - --scale-down-cool-down=30s # optional
-          - --scale-up-cool-down=3m # optional
-          - --scale-up-messages=100 # optional
+          - --scale-up-cool-down=30s # optional
+          - --scale-up-messages=50 # optional
           - --scale-down-messages=10 # optional
           - --max-pods=5 # optional
           - --min-pods=1 # optional

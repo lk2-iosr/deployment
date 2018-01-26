@@ -59,7 +59,23 @@ spec:
             configMapKeyRef:
               key: SPRING_MAIL_USERNAME
               name: publisher-publisher-env
-        image: lk2iosr/publisher:v2
+        - name: REDIS_HOST
+          valueFrom:
+            configMapKeyRef:
+              key: REDIS_HOST
+              name: publisher-publisher-env
+        - name: REDIS_PORT
+          valueFrom:
+            configMapKeyRef:
+              key: REDIS_PORT
+              name: publisher-publisher-env
+        - name: REDIS_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: REDIS_KEY
+              name: publisher-publisher-env
+        imagePullPolicy: Always
+        image: lk2iosr/publisher:v4
         name: publisher
         resources: {}
       restartPolicy: Always

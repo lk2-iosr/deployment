@@ -44,7 +44,18 @@ spec:
             configMapKeyRef:
               key: PAGES
               name: fetcher-fetcher-env
-        image: lk2iosr/fetcher:v1
+        - name: FETCHER_INTERVAL_IN_MINUTES
+          valueFrom:
+            configMapKeyRef:
+              key: FETCHER_INTERVAL_IN_MINUTES
+              name: fetcher-fetcher-env
+        - name: POSTS_LIMIT
+          valueFrom:
+            configMapKeyRef:
+              key: POSTS_LIMIT
+              name: fetcher-fetcher-env
+        imagePullPolicy: Always
+        image: lk2iosr/fetcher:v2
         name: fetcher
         ports:
         - containerPort: 5000

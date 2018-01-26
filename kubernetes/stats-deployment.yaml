@@ -13,8 +13,35 @@ spec:
         app: stats
     spec:
       containers:
-      - image: lk2iosr/stats:v1
+      - env:
+        - name: AWS_ACCESS_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_ACCESS_KEY
+              name: stats-stats-env
+        - name: AWS_SECRET_KEY
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_SECRET_KEY
+              name: stats-stats-env
+        - name: AWS_QUEUE_NAME
+          valueFrom:
+            configMapKeyRef:
+              key: AWS_QUEUE_NAME
+              name: stats-stats-env
+        - name: SPRING_USER
+          valueFrom:
+            configMapKeyRef:
+              key: SPRING_USER
+              name: stats-stats-env
+        - name: SPRING_PASSWORD
+          valueFrom:
+            configMapKeyRef:
+              key: SPRING_PASSWORD
+              name: stats-stats-env
+        image: lk2iosr/stats:v1
         name: stats
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
         resources: {}
